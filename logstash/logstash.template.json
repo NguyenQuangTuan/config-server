@@ -1,0 +1,26 @@
+{
+  "template": "logstash",
+  "index_patterns": [
+    "logstash-*"
+  ],
+  "settings": {
+    "number_of_shards": 1
+  },
+  "mappings": {
+    "properties": {
+      "message": {
+        "properties": {
+          "requestId": {
+            "type": "keyword"
+          },
+          "environment": {
+            "type": "keyword"
+          }
+        }
+      },
+      "@timestamp": {
+        "type": "date"
+      }
+    }
+  }
+}
